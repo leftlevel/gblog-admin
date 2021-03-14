@@ -29,3 +29,10 @@ export function getUserNumber() {
         method: 'get'
     })
 }
+
+export function getUserAll() {
+    return request({
+        url: '/user/all',
+        method: 'get'
+    })
+}

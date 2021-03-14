@@ -24,8 +24,8 @@
                 </el-select>
             </el-form-item>
             <el-form-item>
-                <el-button type="primary" icon="el-icon-search" @click="searchTags(query)">查询</el-button>
-                <el-button icon="el-icon-refresh" @click="reload"
+                <el-button type="primary" icon="el-icon-search" @click="searchTags(query)" :disabled="query.name === '' && query.status === ''">查询</el-button>
+                <el-button icon="el-icon-refresh" @click="reload" :disabled="query.name === '' && query.status === ''"
                     >重置</el-button
                 >
                 <el-button type="primary" icon="el-icon-circle-plus-outline" @click="handledialog">新增</el-button>
@@ -264,7 +264,8 @@ export default {
             }
         },
         reload() {
-            this.query = {}
+            // this.query = {}
+            this.$refs.queryForm.resetFields()
             this.fetchData()
         },
     },

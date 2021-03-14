@@ -146,8 +146,8 @@ export default {
         // 图片放大
         enlargeBanner() {
             this.srcList = []
-            for(let i = 0; i < this.postList.length; i++) {
-                this.srcList.push(this.postList[i].banner)
+            for(const postObj of this.postList) {
+                this.srcList.push(postObj.banner)
             }
         },
         // 审核文章
